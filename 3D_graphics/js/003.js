@@ -1,4 +1,4 @@
-// 기본 세팅 코드
+// 기본 세팅 코드 scene, camera, renderer
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -21,9 +21,11 @@ const material = new THREE.LineBasicMaterial({ color: 0xfffff });
 
 // 꼭지점에 대한 기하학을 정의
 const points = [];
-points.push(new THREE.Vector3(-10, 0, 0));
+points.push(new THREE.Vector3(-15, 0, 0));
 points.push(new THREE.Vector3(0, 10, 0));
-points.push(new THREE.Vector3(10, 0, 0));
+points.push(new THREE.Vector3(15, 0, 0));
+points.push(new THREE.Vector3(0, -10, 0));
+points.push(new THREE.Vector3(-15, 0, 0));
 
 const geometry = new THREE.BufferGeometry().setFromPoints(points);
 
@@ -39,5 +41,4 @@ function animate() {
     renderer.render(scene, camera);
   }
   
-  console.log(requestAnimationFrame)
 animate()
